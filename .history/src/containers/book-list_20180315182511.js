@@ -21,6 +21,7 @@ class BookList extends Component {
         return(
             <ul className="col-md-4 list-group">
                 {this.renderList()}
+                {this.renderList2()}
             </ul>
         )
     }

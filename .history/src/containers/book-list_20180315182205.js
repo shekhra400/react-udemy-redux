@@ -17,10 +17,19 @@ class BookList extends Component {
         });
     }
 
+    renderList2(){
+        return this.props.copies.map((copy) => {
+            return (
+                <li onClick={() => this.props.selectBookFunc(book)} className="list-group-item" key={book.name}>{book.name}</li>
+            );
+        });
+    }
+
     render(){
         return(
             <ul className="col-md-4 list-group">
                 {this.renderList()}
+                {this.renderList2()}
             </ul>
         )
     }

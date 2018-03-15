@@ -6,6 +6,7 @@ import selectBook from "../actions/select_book";
 class BookList extends Component {
 
     constructor(props){
+        console.log('cccc');
         super(props);
     }
 
@@ -18,9 +19,11 @@ class BookList extends Component {
     }
 
     render(){
+        console.log('render');
         return(
             <ul className="col-md-4 list-group">
                 {this.renderList()}
+                {this.renderList2()}
             </ul>
         )
     }
@@ -28,12 +31,14 @@ class BookList extends Component {
 }
 
 function mapStateToProps(state){
+    console.log('mapStateToProps');
     return {
         books: state.books
     }
 }
 
 function mapDispatchToProps(dispatch){
+    console.log('mapSstateToProps');
     return bindActionCreators( {selectBookFunc: selectBook} ,dispatch);
 }
 

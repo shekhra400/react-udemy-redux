@@ -17,10 +17,20 @@ class BookList extends Component {
         });
     }
 
+    renderList2(){
+        return this.props.copies.map((copy) => {
+            return (
+                <li  className="list-group-item" key={copy.name}>{copy.name}</li>
+            );
+        });
+    }
+
     render(){
+        console.log('render');
         return(
             <ul className="col-md-4 list-group">
                 {this.renderList()}
+                {this.renderList2()}
             </ul>
         )
     }
@@ -28,6 +38,7 @@ class BookList extends Component {
 }
 
 function mapStateToProps(state){
+    console.log('mapStateToProps');
     return {
         books: state.books
     }
